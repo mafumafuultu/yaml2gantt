@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./node_modules/frappe-gantt/dist/frappe-gantt.min.css">
+	<link rel="stylesheet" href="./node_modules/@yaireo/tagify/dist/tagify.css">
+	<link rel="stylesheet" href="./style.css">
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="./node_modules/js-yaml/dist/js-yaml.min.js"></script>
+	<script src="./node_modules/frappe-gantt/dist/frappe-gantt.min.js"></script>
+	<script src="./node_modules/@yaireo/tagify/dist/tagify.min.js"></script>
+	<script src="./main.js"></script>
+</head>
+<body>
+	<details open>
+		<summary>check</summary>
+		<div id="tasks">
+			<label for="task_id">Task ID</label><input type="text" id="task_id">
+			<label for="task_name">Title</label><input type="text" id="task_name">
+			<label for="task_term">Term</label>
+			<div id="task_term">
+				<label for="task_start">Start</label><input type="datetime-local" id="task_start">
+				<label for="task_end">End</label><input type="datetime-local" id="task_end">
+			</div>
+			<label for="task_prog">Progress</label>
+			<div id="task_prog">
+				<input type="range" id="task_progress" min="0" max="100" value="0">
+				<input type="text" readonly name="" id="task_progress_v" value="0">
+			</div>
+			<label for="task_dependencies">dependencies</label><input type="search" class="" id="task_dependencies">
+			<div>
+				<button type="button" id="apply" onclick="applyTask()">Apply</button>
+				<button type="button" id="delete" onclick="deleteTask()">Delete</button>
+			</div>
+		</div>
+	</details>
+	<button type="button" onclick="saveYaml()">Save</button><button type="button">refres</button>
+	<div id="viewstyle">
+		<button type="button" data-role="Quarter Day" onclick="change_mode('Quarter Day')">Quarter Day</button>
+		<button type="button" data-role="Half Day" onclick="change_mode('Half Day')">Half Day</button>
+		<button type="button" data-role="Day" onclick="change_mode('Day')">Day</button>
+		<button type="button" data-role="Week" onclick="change_mode('Week')">Week</button>
+		<button type="button" data-role="Month" onclick="change_mode('Month')">Month</button>
+	</div>
+	<svg id="gantt"></svg>
+
+</body>
+</html>

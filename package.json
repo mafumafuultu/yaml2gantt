@@ -1,0 +1,19 @@
+{
+  "name": "yaml2gantt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "mafumafuultu",
+  "license": "MIT",
+  "dependencies": {
+    "@yaireo/tagify": "^4.21.1",
+    "frappe-gantt": "^0.6.1",
+    "js-yaml": "^4.1.0",
+    "mime-types": "^2.1.35",
+    "socket.io": "^4.7.4"
+  }
+}

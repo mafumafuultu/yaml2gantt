@@ -1,0 +1,13 @@
+- id: Task 1
+  name: Redesign website
+  start: '2024-02-20T00:00:00.000Z'
+  end: '2024-02-29T00:00:00.000Z'
+  progress: 20
+  dependencies: []
+- id: Task 2
+  name: Redesign website2
+  start: '2024-02-29T15:00:00.000Z'
+  end: '2024-03-04T15:00:00.000Z'
+  progress: '59'
+  dependencies:
+    - Task 1
